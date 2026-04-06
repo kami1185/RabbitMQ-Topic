@@ -10,7 +10,7 @@ async function consumeColombiaNews() {
         await channel.assertExchange(exchangeName, 'topic', { durable: false });
 
         const q = await channel.assertQueue('', { exclusive: true });
-        console.log(`[*] ESede Ipiales en la cola: ${q.queue}`);
+        console.log(`[*] Sede Ipiales en la cola: ${q.queue}`);
         
         // 1. El patrón 'ipiales.#' significa:
         // "Recibir cualquier mensaje que empiece con 'ipiales.' seguido de cero o más palabras"
