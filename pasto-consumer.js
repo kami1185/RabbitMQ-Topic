@@ -9,7 +9,7 @@ async function sendNotificationsUniversity() {
 
         await channel.assertExchange(exchangeName, 'topic', { durable: false });
 
-        const q = await channel.assertQueue('', { exclusive: true });
+        const q = await channel.assertQueue('cola_multitarea_ipiales', { exclusive: true });
         console.log(`[*] sede Pasto en la cola: ${q.queue}`);
         
         // 1. El patrón 'pasto.#' significa:
@@ -22,7 +22,7 @@ async function sendNotificationsUniversity() {
         // T4,Emergencias Críticas,"node consumer.js ""#.critica"""        #.*.critica
         // T5,Auditoría Total,"node consumer.js ""#"""
 
-        const bindingPattern = '#.critica';
+        const bindingPattern = '*.agraria.#';
         // const bindingPattern = 'pasto.ingenieria.#';
         channel.bindQueue(q.queue, exchangeName, bindingPattern);
 

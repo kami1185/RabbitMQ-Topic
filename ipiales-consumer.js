@@ -15,7 +15,7 @@ async function consumeColombiaNews() {
         // 1. El patrón 'ipiales.#' significa:
         // "Recibir cualquier mensaje que empiece con 'ipiales.' seguido de cero o más palabras"
 
-        const bindingPattern = '#.critica';
+        const bindingPattern = '*.ingenieria.#';
         // const bindingPattern = 'ipiales.#';
         channel.bindQueue(q.queue, exchangeName, bindingPattern);
 
